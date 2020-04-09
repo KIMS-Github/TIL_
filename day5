@@ -1,0 +1,109 @@
+# Day 5 Take away:
+
+# Numpy
+
+# create array
+arr = np.array([[1,2,3], [4,5,6]])
+
+# reshape R x C
+arr.reshape(3,2)
+
+# arr[1][::-1]
+
+# change a factor
+arr[1][2] = 10
+
+# BroadCasting
+array[0] = 0 or arrary2[0] = [7, 8, 9]
+
+# Select by Condition
+idx = arrary2 > 7
+
+# Type chage 
+data.astype("int")
+
+# Create ones matrix
+np.ones((2, 3, 2))
+
+array([[[1., 1.],
+        [1., 1.],
+        [1., 1.]],
+
+       [[1., 1.],
+        [1., 1.],
+        [1., 1.]]])
+        
+# Create random mat. 
+datas = np.random.randint(100, 130, size=(8, 8))
+
+# matrix masking
+data1 = np.array([1,2,3]) 
+data2 = [True, False, True]
+data1[data2]
+
+-> array([1, 3])
+
+# linespace & logspace
+np.linspace(0, 100, 5) -> array([  0.,  25.,  50.,  75., 100.])
+np.logspace(2, 4, 3)   -> array([  100.,  1000., 10000.])
+
+# numpy random : rand, randn, randint
+
+# np.random.seed()
+np.random.seed(1)
+result1 = np.random.randint(10, 100, 10)
+
+np.random.seed(1)
+result2 = np.random.randint(10, 100, 10)
+
+# matrix concatenate
+1) np.concatenate((na1, na3))
+ array([[3, 0, 0],
+       [5, 7, 5],
+       [4, 3, 6],
+       [1, 4, 0],
+       [8, 5, 4]])
+2) np.concatenate((na2, na3), axis=1)
+ array([[0, 8, 4, 3, 6],
+       [6, 5, 1, 4, 0],
+       [1, 7, 8, 5, 4]])
+
+3) np.c_[np.array([1,2,3]), np.array([4,5,6])] by column
+   np.r_[np.array([1,2,3]), np.array([4,5,6])] by row
+----------------------------------------------------------
+# Pandas
+Series (index , values)and DataFrame(index, column, values)
+# Create
+pd.Series(np.random.randint(10, size=5)
+pd.DataFrame
+     datas = {
+    "name":["dss", "fcamp"],
+    "email":["dss@gmail.com", "fcamp@daum.net"],
+}
+datas
+
+# values select
+df.loc[0]["email"]
+
+# df["domain"] = df["email"].apply(lambda email: email.split("@")[1].split(".")[0])
+df
+
+# append
+df1.append(df2)
+
+# reset_index
+df3.reset_index(drop=True, inplace=True)
+
+# concat
+pd.concat([df3, df1], axis=1)
+
+# df.groupby("Name").agg("mean").reset_index()
+
+# df.describe()
+
+# df["col"].unique()
+
+# df.sort()
+
+# result["Money"] = result["Money"].astype("int")
+
