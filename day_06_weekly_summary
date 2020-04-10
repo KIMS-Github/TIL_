@@ -1,0 +1,152 @@
+# condition if/else
+# i.e 
+
+num = 0
+
+if num:                # "if" next condition is True or False
+    print("python_1")
+
+num = 1
+              
+if num:                # "if" next condition is True or False
+    print("python_2")
+
+# While 
+# i.e
+
+while datas:
+    total += datas.pop()
+
+avg = total / len(points_ls)
+
+total, avg
+
+# range
+list(range(5)), list(range(5, 10)), list(range(10, 0, -2))
+
+# dict : zip, item, key(), values()
+
+# ******************
+  list Comprehention
+  ******************
+  
+result = [data**2 for data in ls]
+result
+
+# 리스트 컴프리헨션 조건문
+ls = range(10)
+[data for data in ls if data % 2]
+
+# speed check
+%%timeit
+ls = [num for num in range(1, 10001) if num % 3 == 0]
+len(ls)
+
+# func return
+# 함수에서 return 코드가 실행되면 무조건 함수의 코드 실행이 종료
+def echo(msg):
+    if msg == "quit":
+        return
+    print(msg)
+
+# return result1, result2
+def calc(num1, num2):
+    return num1 + num2, num1 - num2
+    
+# *args **kwargs
+def plus(*args, **kwargs):
+    print(type(args), args)
+    print(type(kwargs), kwargs)
+    return sum(args) + sum(list(kwargs.values()))
+    
+ plus(1, 2, 3, 4, 5, num1=6, num2=7)
+------------ 
+<class 'tuple'> (1, 2, 3, 4, 5)
+<class 'dict'> {'num1': 6, 'num2': 7}
+28
+
+# Docstring
+echo function
+echo?
+echo??
+help(echo)
+print(echo.__doc__
+
+# scope 
+- global, local
+
+# map, filter, reduce
+
+list(map( lambda ls:ls %2 , ls))
+
+# class의 getter, setter
+class User:
+    
+    def __init__(self, first_name):
+        self.first_name = first_name
+    
+    def setter(self, first_name):
+        if len(first_name) >=  3:
+            self.first_name = first_name
+        else:
+            print("error")
+        
+    def getter(self):        
+        print("getter")
+        return self.first_name.upper()
+    
+    name = property(getter, setter)
+
+# error create
+class LowNumber(Exception):
+    
+    def __str__(self):
+        return "Number grater than 10"
+
+def input_number(num):
+    if num <= 10:
+        raise LowNumber()
+    print(num)
+ 
+ input_number(8)
+ 
+ ----------------------------------------------
+LowNumber    Traceback (most recent call last)
+<ipython-input-17-8684a0e33c0b> in <module>
+----> 1 input_number(8)
+
+<ipython-input-15-2dcc4faaa999> in input_number(num)
+      1 def input_number(num):
+      2     if num <= 10:
+----> 3         raise LowNumber()
+      4     print(num)
+
+LowNumber: Number grater than 10
+
+# Numpy
+- array.reshape(3,2)
+- array[1][::-1]
+- broadcasting
+  array[1] = 0
+- masking
+  idx  = array >7
+  array[idx] = 100
+ - array.astype('str')
+ 
+ # linespace, logspace
+ np.linspace(0, 100, 5)
+ np.logspace(2, 4, 3)
+ 
+ # np.concatenate((np1,np2), axis= 0 or 1)
+ 
+ # Pandas
+ - Series: index, values (same data type, DataFrame : index, columns, values
+ 
+ # df.apply
+ def domain(email):
+    return email.split("@")[1].split(".")[0]
+
+domain(df.loc[0]["email"])
+
+# 
+ 
